@@ -1,9 +1,9 @@
 server:
-  port: 8092
+  port: 8091
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/msvehicle-db
+    url: jdbc:postgresql://localhost:5432/msrepairlist-db
     username: postgres
     password: admin
 eureka:

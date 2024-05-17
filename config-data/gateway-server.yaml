@@ -24,7 +24,7 @@ spring:
         - id: ms-vehicles
           uri: lb://ms-vehicles:8090
           predicates: #mapeo de controladores, puede ser api/v1/vehicles tmb, dependerá de cómo se implemente
-            - Path=/vehicles/**
+            - Path=/api/vehicle/**
         - id: ms-repairlist
           uri: lb://ms-repairlist:8091
           predicates:
