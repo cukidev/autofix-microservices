@@ -1,7 +1,7 @@
 package autofix.microservices.msrepairlist.services;
 
 import autofix.microservices.msrepairlist.entities.RepairListEntity;
-import autofix.microservices.msrepairlist.repository.RepairListRepository;
+import autofix.microservices.msrepairlist.repositories.RepairListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

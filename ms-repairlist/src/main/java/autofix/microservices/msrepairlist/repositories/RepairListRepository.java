@@ -1,4 +1,4 @@
-package autofix.microservices.msrepairlist.repository;
+package autofix.microservices.msrepairlist.repositories;
 
 import autofix.microservices.msrepairlist.entities.RepairListEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

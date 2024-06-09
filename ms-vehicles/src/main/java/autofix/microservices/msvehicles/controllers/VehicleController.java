@@ -42,9 +42,13 @@ public class VehicleController {
         return ResponseEntity.ok(vehicleUpdated);
     }
 
+    /*
+
     @DeleteMapping("/{id}")
     public ResponseEntity<VehicleEntity> deleteVehicle(@PathVariable Long id) throws Exception{
         var isDeleted = vehicleService.deleteVehicle(id);
         return ResponseEntity.noContent().build();
     }
+
+    */
 }

@@ -33,9 +33,11 @@ public class RepairListController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    /* 
     @DeleteMapping("/{id}")
     public ResponseEntity<RepairListEntity> deleteRepair(@PathVariable Long id) throws Exception{
         var isDeleted = repairListService.deleteRepair(id);
         return ResponseEntity.noContent().build();
     }
+    */
 }

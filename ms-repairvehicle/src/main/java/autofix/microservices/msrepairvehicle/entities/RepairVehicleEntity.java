@@ -1,4 +1,5 @@
-package autofix.microservices.msrepairlist.entities;
+package autofix.microservices.msrepairvehicle.entities;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,13 +13,17 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RepairListEntity {
+
+
+public class RepairVehicleEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String licensePlate;
     private String type;
-    private Integer priceGasoline;
-    private Integer priceDiesel;
-    private Integer priceHybrid;
-    private Integer priceElectric;
+    private String repairDate;
+    private String repairTime;
+    private Integer cost;
+
 }
