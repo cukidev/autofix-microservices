@@ -1,0 +1,28 @@
+spring:
+  devtools:
+    restart:
+      aditional-paths: src/main/java
+  application:
+    name: ms-reportes
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/msreportes-db
+    username: postgres
+    password: 1234
+feign:
+  client:
+    config:
+      ms-vehicles:
+        url: http://ms-vehicles
+      ms-repairlist:
+        url: http://ms-repairlist
+      ms-repairvehicle:
+        url: http://ms-repairvehicle

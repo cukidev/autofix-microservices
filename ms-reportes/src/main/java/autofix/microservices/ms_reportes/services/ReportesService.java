@@ -1,15 +1,11 @@
-package autofix.microservices.msreportes.services;
+package autofix.microservices.ms_reportes.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @Service
 public class ReportesService {
-
+/* 
     @Autowired
     private RestTemplate restTemplate;
 
@@ -17,6 +13,8 @@ public class ReportesService {
     private final String repairListServiceUrl = "http://msrepairlist/api/repairs";
     private final String repairVehicleServiceUrl = "http://msrepairvehicle/api/repairvehicles";
 
+
+    
     public List<Map<String, Object>> getReporte1(String month, String year) {
         // Obtener datos de los microservicios
         List<Map<String, Object>> vehicles = restTemplate.getForObject(vehicleServiceUrl, List.class);
@@ -53,6 +51,8 @@ public class ReportesService {
         return report;
     }
 
+    
+
     public List<Map<String, Object>> getReporte2(String month) {
         // Obtener datos de los microservicios
         List<Map<String, Object>> repairHistory = restTemplate.getForObject(repairVehicleServiceUrl, List.class);
@@ -69,8 +69,15 @@ public class ReportesService {
         Map<String, Long> report = filteredRepairHistory.stream()
                 .collect(Collectors.groupingBy(repair -> (String) repair.get("type"), Collectors.counting()));
 
+        /* 
         return report.entrySet().stream()
-                .map(entry -> Map.of("type", entry.getKey(), "count", entry.getValue()))
+                .map(entry -> {
+                    String repairType = entry.getKey();
+                    Long repairCount = entry.getValue();
+                    return Map.of("type", repairType, "count", repairCount);
+                })
                 .collect(Collectors.toList());
+
+        */
     }
-}
+

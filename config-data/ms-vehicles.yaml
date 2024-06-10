@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8090
 
 spring:
   datasource:
@@ -8,9 +8,9 @@ spring:
     password: admin
 eureka:
   instance:
-    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
+      default-zone: http://${EUREKA:localhost}:8761/eureka

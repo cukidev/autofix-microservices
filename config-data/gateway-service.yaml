@@ -7,7 +7,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
+      default-zone:  http://eureka-service:8761/eureka/
 spring:
   cloud:
     gateway:
@@ -20,6 +20,7 @@ spring:
             allowedOrigins: '*'
             allowedMethods: "*"
             allowedHeaders: "*"
+            allowed-origin-patterns: "*"
       routes:
         - id: ms-vehicles
           uri: lb://ms-vehicles:8090
@@ -29,3 +30,11 @@ spring:
           uri: lb://ms-repairlist:8091
           predicates:
             - Path=/api/repairlist/**
+        - id: ms-repairvehicle
+          uri: lb://ms-repairvehicle:8092
+          predicates:
+            - Path=/api/repairvehicle/**
+        - id: ms-reportes
+          uri: lb://ms-reportes:8093
+          predicates:
+            - Path=/api/reportes/**

@@ -2,7 +2,6 @@ package autofix.microservices.msvehicles.controllers;
 
 import autofix.microservices.msvehicles.entities.VehicleEntity;
 import autofix.microservices.msvehicles.services.VehicleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +12,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class VehicleController {
     private final VehicleService vehicleService;
-    @Autowired
+
     public VehicleController(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
     }
@@ -42,13 +41,4 @@ public class VehicleController {
         return ResponseEntity.ok(vehicleUpdated);
     }
 
-    /*
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<VehicleEntity> deleteVehicle(@PathVariable Long id) throws Exception{
-        var isDeleted = vehicleService.deleteVehicle(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    */
 }

@@ -1,17 +1,14 @@
 package autofix.microservices.msvehicles.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import autofix.microservices.msvehicles.enums.EngineTypeEnum;
+import autofix.microservices.msvehicles.enums.VtypeEnum;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter @Setter
+@Entity
 public class VehicleEntity {
 
     @Id
@@ -21,9 +18,9 @@ public class VehicleEntity {
     private String licensePlate;
     private String brand;
     private String model;
-    private String v_type;
+    private VtypeEnum v_type;
     private Integer year_of_manufacture;
-    private String engine_type;
+    private EngineTypeEnum engine_type;
     private Integer seats;
     private Integer mileage;
 }
